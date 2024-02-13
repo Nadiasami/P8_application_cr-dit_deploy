@@ -38,11 +38,9 @@ def Extraction_result(ride, selected_id):
     ride_subset = df_pred.iloc[[current_id]]
     ride_data = ride_subset.to_dict(orient='records')
 
-    url = 'https://apideploy-dmc3.onrender.com/predict'
         
-    response = requests.post(url, json=ride_data)
+    response_data = requests.post(url="https://apideploy-dmc3.onrender.com/predict",json=ride_data).json()
 
-    response_data = response.json()
 
     prediction = response_data["prediction"]
     shap_values_data = response_data["shap_values"]
