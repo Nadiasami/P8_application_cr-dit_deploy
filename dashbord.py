@@ -22,7 +22,7 @@ st.markdown(
 ride = pd.DataFrame()
 
 # Charger le fichier csv
-ride = pd.read_csv("C:/Users/smart asus/P7_données/code_vs_code/analyse_nettoyage_experiences/Data_for_test/test_data2.csv")
+ride = pd.read_csv("test_data_app.csv")
 
 @st.cache_data
 def Extraction_result(ride, selected_id):
