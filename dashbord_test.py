@@ -39,7 +39,7 @@ def Extraction_result(ride, selected_id):
     ride_data = ride_subset.to_dict(orient='records')
 
         
-    response_data = requests.post(url="https://applicationcredit.onrender.com/predict",json=ride_data).json()
+    response_data = requests.post(url="http://localhost:9696/predict",json=ride_data).json()
 
 
     prediction = response_data["prediction"]
