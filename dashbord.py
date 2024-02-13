@@ -22,7 +22,7 @@ st.markdown(
 ride = pd.DataFrame()
 
 # Charger le fichier csv
-ride = pd.read_csv("test_data_app.csv")
+ride = pd.read_csv("C:/Users/smart asus/P7_données/code_vs_code/analyse_nettoyage_experiences/Data_for_test/test_data.csv")
 
 @st.cache_data
 def Extraction_result(ride, selected_id):
@@ -38,7 +38,7 @@ def Extraction_result(ride, selected_id):
     ride_subset = df_pred.iloc[[current_id]]
     ride_data = ride_subset.to_dict(orient='records')
 
-    url = 'https://apideploy-dmc3.onrender.com/predict'
+    url = 'http://localhost:9696/predict'
         
     response = requests.post(url, json=ride_data)
 
